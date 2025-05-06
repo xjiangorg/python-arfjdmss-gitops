@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: python-arfjdmss-gitops
+  description: This is GitOps manifest for python-arfjdmss   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=python-arfjdmss
+    backstage.io/kubernetes-id: python-arfjdmss 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: python-arfjdmss
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:python-arfjdmss
